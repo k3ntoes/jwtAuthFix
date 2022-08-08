@@ -24,7 +24,7 @@ public class SingleResult<U> {
             httpStatus = HttpStatus.NOT_FOUND;
 
         return ResponseEntity.status(httpStatus).body(
-                new SingleResult(
+                new SingleResult<U>(
                         httpStatus.value(),
                         httpStatus,
                         data

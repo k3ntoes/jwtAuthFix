@@ -1,0 +1,29 @@
+# Rename this to application.yaml
+
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/caterapi
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+
+kentoes:
+  security:
+    jwt:
+      jwtExpirationMs: 36000000
+      keystore-location: keys/caterkey.jks
+      keystore-password: superSecretPassword
+      key-alias: caterSecret
+      private-key-passphrase: superSecretPassword
